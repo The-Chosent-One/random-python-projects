@@ -1,0 +1,3 @@
+# Golfed a implementation of a two-player version of tictactoe, and had a ton of fun doing it
+
+(w:=[0,0],j:=lambda a,b=0:a.__setstate__(b),P:=print,R:=range,c:=lambda:P("\n---+---+---\n".join("|".join([(w[0]&(h:=1<<8-_)==h)*" o "+(w[1]&h==h)*" x "or f" {_+1} "for(_)in R(9)][_:_+3])for(_)in R(0,9,3))),c(),q:=iter([(0,"o"),(1,"x")]),[(i:=iter([1]),[(n:=input(f"{d}'s turn: "),(n.isdigit()and(0<(I:=int(n))<10)and(r:=1<<9-I)&(w[0]|w[1])<1or(P("Invalid!"),c(),j(i))))for(_)in i],w.insert(p,g:=w.pop(p)|r),c(),p<1or j(q),(j(q,3),P(f"{d} won the game!"))if any(g&i==i for(i)in[292,146,73,448,56,7,273,84])else(w[0]|w[1]<511)or(j(q,3),P("Draw!")))for(p,d)in q])
